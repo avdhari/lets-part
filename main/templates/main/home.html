@@ -1,0 +1,15 @@
+ 
+
+{% block content %}
+
+    {% for event in events %}
+    
+    <h3>{{event.name}}</h3>
+    <p>{{event.content}}</p>
+    <img src="{{ event.flyer.url }}" alt="image">
+    <a href="{{event.registration}}" target="_blank">Register</a>
+
+
+    {% endfor %}
+
+{% endblock %}
