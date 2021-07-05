@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+
+{% block title %} Create New Post | LetsStar{% endblock %}
+
+
+{% block content %}
+
+<h1>New Post!</h1>
+<br><br>
+<div class="'form-group">
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <a href="{% url 'home' %}" class="btn btn-danger">Cancel</a>
+        <button class="btn btn-success">&nbsp; Post &nbsp; </button>        
+    </form>
+
+</div>
+{% endblock %}

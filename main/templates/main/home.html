@@ -1,15 +1,19 @@
- 
+
+{% extends 'main/base.html' %}
+{% load static %}
 
 {% block content %}
 
-    {% for event in events %}
-    
-    <h3>{{event.name}}</h3>
-    <p>{{event.content}}</p>
-    <img src="{{ event.flyer.url }}" alt="image">
-    <a href="{{event.registration}}" target="_blank">Register</a>
+<a href="{% url 'newpost' %}" class="btn btn-danger">new post</a>
+
+{% for event in events %}
+
+<h3>{{event.name}}</h3>
+<p>{{event.content}}</p>
+<img src="{{ event.flyer.url }}" alt="image">
+<a href="{{event.registration}}" target="_blank" class="btn btn-danger">Register</a>
 
 
-    {% endfor %}
+{% endfor %}
 
 {% endblock %}
